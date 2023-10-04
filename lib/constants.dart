@@ -9,12 +9,12 @@ import 'views/video_screen.dart';
 
 List pages =  [
   // const Text('Messages Screen'),
+  VideoScreen(),
   const Text('Messages Screen'),
   const Text('Messages Screen'),
   const Text('Messages Screen'),
   // Text('Messages Screen'),
 
-  VideoScreen(),
   // SearchScreen(),
   // const AddVideoScreen(),
   // Text('Messages Screen'),
