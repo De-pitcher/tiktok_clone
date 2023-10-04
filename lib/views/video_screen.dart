@@ -10,6 +10,18 @@ class VideoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Obx(
+        () => PageView.builder(
+          itemCount: videoController.videoList.length,
+          itemBuilder: (context, index) {
+            final data = videoController.videoList[index];
+            return Stack(
+              children: [],
+            );
+          },
+        ),
+      ),
+    );
   }
 }
