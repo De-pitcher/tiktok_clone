@@ -46,6 +46,8 @@ dependencies:
   # video_compress:
   video_player: ^2.7.2
   rename: ^3.0.0
+  # light_compressor: ^2.2.0
+  video_compress: ^3.1.2
 
 dev_dependencies:
   flutter_test:

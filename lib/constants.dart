@@ -4,6 +4,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 import 'controllers/auth_controller.dart';
+import 'views/add_video_screen.dart';
 import 'views/profile_screen.dart';
 import 'views/video_screen.dart';
 
@@ -11,7 +12,8 @@ List pages =  [
   // const Text('Messages Screen'),
   VideoScreen(),
   const Text('Messages Screen'),
-  const Text('Messages Screen'),
+  // const Text('Messages Screen'),
+  const AddVideoScreen(),
   const Text('Messages Screen'),
   // Text('Messages Screen'),
 
