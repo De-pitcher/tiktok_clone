@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants.dart';
 import '../../widgets/text_input_field.dart';
@@ -49,7 +50,17 @@ class SignupScreen extends StatelessWidget {
                   bottom: -10,
                   left: 80,
                   child: IconButton(
-                    onPressed: () => authController.pickImage(),
+                    onPressed: () {
+                      authController.pickImage(imagePicker).then((value) {
+                        if (value != null) {
+                          Get.snackbar('Profile Picture',
+                              'You have successfully selected your profile picture!');
+                        } else {
+                          Get.snackbar(
+                              'Error', 'Could not add profile picture');
+                        }
+                      });
+                    },
                     icon: const Icon(
                       Icons.add_a_photo,
                     ),
@@ -107,12 +118,17 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               child: InkWell(
-                onTap: () => authController.registerUser(
-                  _usernameController.text,
-                  _emailController.text,
-                  _passwordController.text,
-                  authController.profilePhoto,
-                ),
+                onTap: () {
+                  authController
+                      .registerUser(
+                        _usernameController.text,
+                        _emailController.text,
+                        _passwordController.text,
+                        authController.profilePhoto,
+                      )
+                      .catchError(
+                          (e) => Get.snackbar('Error Creating Account', e));
+                },
                 child: const Center(
                   child: Text(
                     'Register',
